@@ -10,4 +10,3 @@ while True:
     message = message.upper()
     print(message)
     server_socket.sendto(message, address)
-    

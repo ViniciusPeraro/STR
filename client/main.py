@@ -5,7 +5,7 @@ import threading
 def sendMessage(prgName):
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     client_socket.settimeout(1.0)
-    message = bytes('Programa ' + str(prgName), encoding='utf-8')
+    message = bytes('Software ' + str(prgName), encoding='utf-8')
     addr = ("127.0.0.1", 12000)
 
     start = time.time()
@@ -27,14 +27,3 @@ if __name__ == "__main__":
                 valor_p = str(user_input.split("p")[1])
                 t = threading.Thread(target=sendMessage, args=(valor_p))
                 t.start()
-
-        
-
-
-
-
-
-
-
-
-
