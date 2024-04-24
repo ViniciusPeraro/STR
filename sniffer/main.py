@@ -2,8 +2,8 @@ from scapy.all import *
 from datetime import datetime
 from twilio.rest import Client
 
-account_sid = '...'
-auth_token = '...'
+account_sid = ''
+auth_token = ''
 client = Client(account_sid, auth_token)
 
 connection_vet = []
@@ -45,6 +45,7 @@ if __name__ == "__main__":
             tempo_limite = timedelta(seconds=15)
             if tempo_decorrido >= tempo_limite:
                 del connection_vet[index]
+                print(connection.id.decode('utf-8') + ' esta fora do ar!\n')
                 with open("log.txt", "a") as my_file:
                     my_file.write(connection.id.decode('utf-8') + ' esta fora do ar!\n')
                     my_file.write('Ultima atualização: ' + current_time.strftime('%H:%M:%S') + '\n')
